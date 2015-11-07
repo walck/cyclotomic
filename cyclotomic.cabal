@@ -1,0 +1,28 @@
+Name:                cyclotomic
+Version:             0.4.4
+Synopsis:            A subfield of the complex numbers for exact calculation.
+Description:         The cyclotomic numbers are a subset of the
+                     complex numbers that are represented exactly, enabling exact
+                     computations and equality comparisons.  They
+                     contain the Gaussian rationals (complex numbers
+                     of the form p + q i with p and q rational), as well
+                     as all complex roots of unity.  The
+                     cyclotomic numbers contain the square roots of
+                     all rational numbers.  They contain the sine and
+                     cosine of all rational multiples of pi.
+                     The cyclotomic numbers form a field, being closed under
+                     addition, subtraction, mutiplication, and division.
+License:             GPL-3
+License-file:        LICENSE
+Author:              Scott N. Walck
+Maintainer:          Scott N. Walck <walck@lvc.edu>
+Category:            Math
+Build-type:          Simple
+Cabal-version:       >=1.6
+Tested-with:         GHC == 7.8.4, GHC == 7.10.2
+Library
+  Exposed-modules:     Data.Complex.Cyclotomic
+  Build-depends:       base >= 4.2 && < 4.9,
+                       containers >= 0.3 && < 0.6,
+                       arithmoi >= 0.4 && < 0.5
+  Hs-source-dirs:      src
