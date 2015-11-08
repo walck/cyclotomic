@@ -26,3 +26,6 @@ Library
                        containers >= 0.3 && < 0.6,
                        arithmoi >= 0.4 && < 0.5
   Hs-source-dirs:      src
+Source-repository head
+  type:                git
+  location:            https://github.com/walck/cyclotomic
