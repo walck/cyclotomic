@@ -1,5 +1,5 @@
 Name:                cyclotomic
-Version:             0.4.4
+Version:             0.4.4.1
 Synopsis:            A subfield of the complex numbers for exact calculation.
 Description:         The cyclotomic numbers are a subset of the
                      complex numbers that are represented exactly, enabling exact
@@ -22,9 +22,9 @@ Cabal-version:       >=1.6
 Tested-with:         GHC == 7.8.4, GHC == 7.10.2
 Library
   Exposed-modules:     Data.Complex.Cyclotomic
-  Build-depends:       base >= 4.2 && < 4.9,
-                       containers >= 0.3 && < 0.6,
-                       arithmoi >= 0.4 && < 0.5
+  Build-depends:       base >= 4.2,
+                       containers >= 0.3,
+                       arithmoi >= 0.4
   Hs-source-dirs:      src
 Source-repository head
   type:                git
