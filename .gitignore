@@ -22,7 +22,7 @@ cabal.sandbox.config
 .stack-work/
 Bounds.txt
 Examples.hs
-Properties.hs
+PropertiesBrent.hs
 SourceGraph/
 UnitTests.hs
 _darcs/
@@ -32,3 +32,4 @@ cabal.sandbox.config*
 cyclotomic.cabal-*
 src/Profiling.hs
 stack.yaml
+test20170122/

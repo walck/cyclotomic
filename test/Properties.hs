@@ -40,6 +40,7 @@ tests = [test1a
         ,test2b
         ,test3b
         ,test4b
+        ,test5
         ,S.withDepth 10 (S.testProperty "SmallCheck prop_square_sqrtRat" prop_square_sqrtRat)
         ,qc_square_sqrtRat
         ,qc_Gauss
@@ -78,6 +79,10 @@ test4b :: T.Test
 test4b = testGroup "z * (1 / z) == 1 for the following values of z"
          [testCase (show z) (z * (1 / z) @?= 1)
               | n <- [1..10], m <- [1..10], let z = e n + e m, z /= 0]
+
+test5 :: T.Test
+test5 = testGroup "Heron's formula"
+        [testCase "Try Heron" (heron 3 4 5 @?= 6)]
 
 ----------------
 -- Properties --

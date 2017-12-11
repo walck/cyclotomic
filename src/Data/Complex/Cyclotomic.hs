@@ -3,7 +3,7 @@
 
 {- | 
 Module      :  Data.Complex.Cyclotomic
-Copyright   :  (c) Scott N. Walck 2012-2013
+Copyright   :  (c) Scott N. Walck 2012-2017
 License     :  GPL-3 (see LICENSE)
 Maintainer  :  Scott N. Walck <walck@lvc.edu>
 Stability   :  experimental
@@ -86,6 +86,7 @@ module Data.Complex.Cyclotomic
     , dft
     , dftInv
     , rootsQuadEq
+    , heron
     )
     where
 
@@ -473,13 +474,13 @@ isGaussianRat :: Cyclotomic -> Bool
 isGaussianRat c = isRat (real c) && isRat (imag c)
 
 -- | Export as an inexact complex number.
-toComplex :: Cyclotomic -> Complex Double
+toComplex :: RealFloat a => Cyclotomic -> Complex a
 toComplex c = sum [fromRational r * en^p | (p,r) <- M.toList (coeffs c)]
     where en = exp (0 :+ 2*pi/n)
           n = fromIntegral (order c)
 
 -- | Export as an inexact real number if possible.
-toReal :: Cyclotomic -> Maybe Double
+toReal :: RealFloat a => Cyclotomic -> Maybe a
 toReal c
     | isReal c   = Just $ realPart (toComplex c)
     | otherwise  = Nothing
@@ -561,3 +562,14 @@ rootsQuadEq a b c
       aa = fromRational a
       bb = fromRational b
       sqrtDisc = sqrtRat (b*b - 4*a*c)
+
+-- | Heron's formula for the area of a triangle with
+--   side lengths a, b, c.
+heron :: Rational    -- ^ a
+      -> Rational    -- ^ b
+      -> Rational    -- ^ c
+      -> Cyclotomic  -- ^ area of triangle
+heron a b c
+    = sqrtRat (s * (s-a) * (s-b) * (s-c))
+      where
+        s = (a + b + c) / 2
