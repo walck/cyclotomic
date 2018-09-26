@@ -63,6 +63,7 @@ module Data.Number.RealCyclotomic
     , isRat
     , toRat
     , toReal
+    , magSq
     , goldenRatio
     , heron
     )
@@ -147,3 +148,7 @@ heron a b c
     = sqrtRat (s * (s-a) * (s-b) * (s-c))
       where
         s = (a + b + c) / 2
+
+-- | The square of the magnitude of a real cyclotomic.
+magSq :: RealCyclotomic -> RealCyclotomic
+magSq (RealCyclotomic c) = RealCyclotomic (c * conj c)

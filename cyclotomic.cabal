@@ -1,5 +1,5 @@
 Name:                cyclotomic
-Version:             0.5.1
+Version:             0.5.2
 Stability:           experimental
 Synopsis:            A subfield of the complex numbers for exact calculation.
 Description:         The cyclotomic numbers are a subset of the
