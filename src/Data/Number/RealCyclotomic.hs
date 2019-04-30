@@ -151,4 +151,4 @@ heron a b c
 
 -- | The square of the magnitude of a real cyclotomic.
 magSq :: RealCyclotomic -> RealCyclotomic
-magSq (RealCyclotomic c) = RealCyclotomic (c * conj c)
+magSq (RealCyclotomic c) = RealCyclotomic (c * Cyc.conj c)

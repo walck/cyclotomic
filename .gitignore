@@ -1,4 +1,5 @@
 dist
+dist-newstyle
 cabal-dev
 *.o
 *.hi
@@ -33,3 +34,4 @@ cyclotomic.cabal-*
 src/Profiling.hs
 stack.yaml
 test20170122/
+.ghc.environment.x86_64-linux-8.6.1
