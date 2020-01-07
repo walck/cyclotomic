@@ -1,5 +1,5 @@
 Name:                cyclotomic
-Version:             1.0
+Version:             1.0.1
 Stability:           stable
 Synopsis:            A subfield of the complex numbers for exact calculation.
 Description:         The cyclotomic numbers are a subset of the
@@ -37,9 +37,9 @@ Test-suite cyclotomic-tests
 Library
   ghc-options:       -Wall
   Exposed-modules:   Data.Complex.Cyclotomic, Data.Number.RealCyclotomic
-  Build-depends:     base >= 4.2 && < 4.13,
+  Build-depends:     base >= 4.2 && < 4.14,
                      containers >= 0.3,
-                     arithmoi >= 0.4
+                     arithmoi >= 0.5
   default-language:  Haskell2010
   Hs-source-dirs:    src
 
